@@ -31,20 +31,7 @@ type CustomerData struct{
 
 func (t *CustomerChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 
-	var err error
-	// Initialize the chaincode
-	// function, args := stub.GetFunctionAndParameters()
-	fmt.Printf("Deployment of Customer ChainCode is completed\n")
-
-	var emptyCustomerTxs []CustomerData
-	jsonAsBytes, _ := json.Marshal(emptyCustomerTxs)
-	err = stub.PutState(customerIndexTxStr, jsonAsBytes)
-	if err != nil {
-		return shim.Error(err.Error())
-	}
-
-
-	return shim.Success(nil)
+fmt.Printf("Deployment of Customer ChainCode is completed\n")
 }
 
 // Add customer data for the policy
